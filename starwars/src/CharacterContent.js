@@ -5,7 +5,6 @@ const ContentDiv = styled.div`
   width: 400px;
   max-width: 100%;
   padding: 10px;
-  background-color: white;
   border-radius: 10px;
   margin-bottom: 20px;
 `;
