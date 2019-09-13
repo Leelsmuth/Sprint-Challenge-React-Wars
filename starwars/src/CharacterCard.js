@@ -7,7 +7,7 @@ const CharacterCard = () => {
 
   useEffect(() => {
     axios
-      .get("https://swapi.co/api/people")
+      .get("https://swapi.co/api/people/?format=json")
       .then(response => {
         setPeople(response.data.results);
       })
