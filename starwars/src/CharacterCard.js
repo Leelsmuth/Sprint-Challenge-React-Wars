@@ -4,6 +4,7 @@ import CharacterContent from "./CharacterContent";
 
 const CharacterCard = () => {
   const [people, setPeople] = useState([]);
+  const [error, setErrorState] = useState("");
 
   useEffect(() => {
     axios
@@ -12,12 +13,13 @@ const CharacterCard = () => {
         setPeople(response.data.results);
       })
       .catch(error => {
-        console.log("Error!!!!");
+        setErrorState("Error 404");
       });
   }, []);
 
   return (
     <div className="characters">
+      {error && <p>{error}</p>}
       {people.map(character => {
         return (
           <CharacterContent
