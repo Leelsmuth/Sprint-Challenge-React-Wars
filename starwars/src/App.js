@@ -11,6 +11,17 @@ const App = () => {
   // sync up with, if any.
   const [starwarsData, setstarwarsData] = useState([]);
 
+  useEffect(() => {
+    axios
+      .get("https://swapi.co/api/people/")
+      .then(response => {
+        setstarwarsData(response.data.result);
+      })
+      .catch(error => {
+        console.log("Error!!!!");
+      });
+  }, []);
+
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
